@@ -37,3 +37,31 @@ INNER JOIN animals ON animals.owner_id = owners.id WHERE full_name = 'Dean Winch
 SELECT owners.full_name, COUNT(owners.full_name) FROM animals
 lEFT JOIN owners ON animals.owner_id = owners.id GROUP BY owners.full_name
 ORDER BY COUNT(owners.full_name) DESC;
+
+
+SELECT * FROM visits WHERE vet_id = '1' ORDER BY date_of_visit DESC LIMIT 1;
+
+SELECT DISTINCT COUNT(visits.animals_id) FROM visits WHERE vet_id = '3';
+
+SELECT V.id AS vets_id, V.name, S.id AS species_id, S.name FROM vets AS V FULL OUTER JOIN species AS S ON V.id = S.id;
+
+SELECT * FROM visits WHERE vet_id = '3' AND date_of_visit BETWEEN '2020-04-01' AND '2020-08-30';
+
+SELECT visits.animals_id, COUNT(visits.animals_id) as counted FROM visits GROUP BY animals_id ORDER BY counted DESC LIMIT 4;
+
+SELECT visits.animals_id, visits.date_of_visit, COUNT(visits.animals_id) as counted FROM visits WHERE vet_id = '2' GROUP BY date_of_visit,animals_id ORDER BY date_of_visit LIMIT 1;
+
+SELECT * FROM visits ORDER BY visits.date_of_visit DESC LIMIT 1;
+
+SELECT COUNT(visits.date_of_visit) FROM visits FULL OUTER JOIN specializations ON visits.vet_id = specializations.vet_id WHERE specializations.vet_id is null ORDER BY COUNT DESC
+LIMIT 1;
+
+SELECT species.id,
+    COUNT(species.id)
+FROM animals
+    FULL JOIN species ON animals.species_id = species.id
+    JOIN visits ON animals.id = visits.animals_id
+WHERE visits.vet_id = '2'
+GROUP BY species.id
+ORDER BY COUNT DESC
+LIMIT 1;
