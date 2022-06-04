@@ -30,6 +30,43 @@ INSERT INTO species (NAME) VALUES ('Pokemon');
 INSERT INTO species (NAME) VALUES ('Digimon');
 
 
+-- Vets tables
+
+INSERT INTO vets (NAME, AGE, DATE_OF_GRADUATION) VALUES ('William Tatcher','45','2000-04-23');
+INSERT INTO vets (NAME, AGE, DATE_OF_GRADUATION) VALUES ('Maisy Smith','26','2019-01-17');
+INSERT INTO vets (NAME, AGE, DATE_OF_GRADUATION) VALUES ('Stephanie Mendez','64','1981-05-04');
+INSERT INTO vets (NAME, AGE, DATE_OF_GRADUATION) VALUES ('Jack Harkness','38','2008-06-08');
+
+-- Specialities
+
+INSERT INTO specializations VALUES ('1','1');
+INSERT INTO specializations VALUES ('3','1');
+INSERT INTO specializations VALUES ('3','2');
+INSERT INTO specializations VALUES ('4','2');
+
+-- Visits
+
+INSERT INTO visits VALUES ('3','1','2020-05-24 08:13:39-05');
+INSERT INTO visits VALUES ('3','3','2020-07-22 14:12:22-05');
+INSERT INTO visits VALUES ('4','4','2021-02-02 07:14:30-05');
+INSERT INTO visits VALUES ('5','2','2020-01-05 08:52:51-05');
+INSERT INTO visits VALUES ('5','2','2020-03-08 09:55:26-05');
+INSERT INTO visits VALUES ('5','2','2020-05-14 13:41:38-05');
+INSERT INTO visits VALUES ('6','3','2021-05-04 10:26:19-05');
+INSERT INTO visits VALUES ('7','4','2021-02-24 09:22:10-05');
+INSERT INTO visits VALUES ('8','2','2019-12-21 11:18:24-05');
+INSERT INTO visits VALUES ('8','1','2020-08-10 13:58:17-05');
+INSERT INTO visits VALUES ('8','2','2021-04-07 09:08:28-05');
+INSERT INTO visits VALUES ('9','3','2019-09-29 12:25:36-05');
+INSERT INTO visits VALUES ('10','4','2020-10-03 11:17:42-05');
+INSERT INTO visits VALUES ('10','4','2020-11-04 15:40:51-05');
+INSERT INTO visits VALUES ('10','4','2019-01-24 10:39:50-05');
+INSERT INTO visits VALUES ('11','2','2019-05-15 11:27:11-05');
+INSERT INTO visits VALUES ('11','2','2020-02-27 10:15:33-05');
+INSERT INTO visits VALUES ('11','2','2020-08-03 08:10:44-05');
+INSERT INTO visits VALUES ('12','3','2020-05-24 09:07:46-05');
+INSERT INTO visits VALUES ('12','1','2021-01-11 07:16:46-05');
+
 -- Set species_id
 
 BEGIN;
@@ -72,3 +109,4 @@ SET owner_id = 5
 WHERE name = 'Angemon' OR name = 'Boarmon';
 COMMIT;
 -- UPDATE 2
+
